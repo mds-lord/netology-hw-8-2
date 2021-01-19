@@ -13,6 +13,7 @@
           mode: 0644
         register: download_java_binaries
         until: download_java_binaries is succeeded
+        check_mode: no
         tags: java
       - name: Ensure installation dir exists
         become: true
@@ -20,6 +21,7 @@
           state: directory
           path: "{{ java_home }}"
           mode: 0755
+        check_mode: no
         tags: java
       - name: Extract java in the installation directory
         become: true
@@ -51,12 +53,14 @@
           force: true
         register: get_elastic
         until: get_elastic is succeeded
+        check_mode: no
         tags: elastic
       - name: Create directrory for Elasticsearch
         file:
           state: directory
           path: "{{ elastic_home }}"
           mode: 0755
+        check_mode: no
         tags: elastic
       - name: Extract Elasticsearch in the installation directory
         become: true
@@ -90,6 +94,7 @@
           mode: 0644
         register: download_kibana_binaries
         until: download_kibana_binaries is succeeded
+        check_mode: no
         tags: kibana
       - name: Ensure installation dir exists
         become: true
@@ -97,6 +102,7 @@
           state: directory
           path: "{{ kibana_home }}"
           mode: 0755
+        check_mode: no
         tags: kibana
       - name: Extract kibana in the installation directory
         become: true
