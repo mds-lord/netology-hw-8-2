@@ -1,8 +1,8 @@
 ---
   - name: Install Java
-    hosts: all
+    hosts: elasticsearch
     tasks:
-      - name: Set facts for Java 8 vars
+      - name: Set facts for Java 11 vars
         set_fact:
           java_home: "/opt/jdk/{{ java_jdk_version }}"
         tags: java
