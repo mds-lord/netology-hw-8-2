@@ -8,8 +8,7 @@
 ## Подготовка и использование
 
 В директории с плейбуком необходимо создать поддиректорию files и скачать в неё 
-дистрибутивы Java и Kibana
-[Java](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+дистрибутивы [Java](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) и 
 [Kibana](https://www.elastic.co/downloads/kibana)
 
 
