@@ -1,0 +1,5 @@
+---
+  logstash_version: "7.10.2"
+  logstash_home: "/opt/logstash/{{ logstash_version }}"
+  elastic_connection_host: "{{ elastic_ip.stdout }}"
+  elastic_connection_port: 5601

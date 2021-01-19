@@ -1,0 +1,8 @@
+input { 
+  stdin { }
+}
+output {
+  elasticsearch { 
+    hosts => ["{{ elastic_connection_host }}:{{ elastic_connection_port }}"] 
+  }
+}
