@@ -3,3 +3,7 @@
     hosts:
       centos:
         ansible_connection: docker
+  logstash:
+    hosts:
+      ubuntu:
+        ansible_connection: docker
