@@ -1,9 +1,9 @@
 # README #
 
 Этот плейбук предназначен для развертывания связки elasticsearch+kibana на 
-единственном хосте.
+одном хосте и logstash на втором хосте
 
-В нём последовательно устанавливаются Java JDK, Elasticsearch и Kibana.
+В нём последовательно устанавливаются Java JDK, Elasticsearch Kibana и Logstash.
 
 ## Подготовка и использование
 
@@ -22,10 +22,16 @@
 [group_vars/all/vars.yml]
   java_jdk_version: 11.0.9  # версия jdk Java
   java_oracle_jdk_package: jdk-11.0.9_linux-x64_bin.tar.gz  # название архива с jdk
+[group_vars/logstash/vars.yml]
+  logstash_version: "7.10.2"  # версия Logstash
 ````
-
 ## Запуск плейбука
 
 ````
 ansible-playbook site.yml -i inventory/prod.yml 
 ````
+## Примечание
+
+Запуск тестировался на двух докер контейнерах, поэтому для определения ip адреса использовался 
+локальный запуск докера и публикация порта elasticsearch на контейнере с elastic.
+Адрес контейнера с elasticsearch и порт подставляются в конфиг logstash автоматически.
